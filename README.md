@@ -1,15 +1,16 @@
 # MemberLog
-##Resource
-###Members
-###Attributes: 
+## Resource
+### Members
+### Attributes: 
 * name (string)
 * age (integer)
 * date of birth (string) 
 * email (string)
 * phone number (string)
 
-##Database Schema
+## Database Schema
 '''
+
 CREATE TABLE members (
 id INTEGER PRIMARY KEY AUTOINCREMENT, 
 name TEXT NOT NULL, 
@@ -18,7 +19,7 @@ dob TEXT,
 email TEXT, 
 pnumber TEXT);
 '''
-##REST Endpoints
+## REST Endpoints
 |      Name     | HTTP Method |       Path        |
 | ------------- | ----------- | ----------------- |
 | do_preflight  |   OPTIONS   | /members/<int:id> |
