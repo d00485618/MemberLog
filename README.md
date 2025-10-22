@@ -9,8 +9,7 @@
 * phone number (string)
 
 ## Database Schema
-'''
-
+```
 CREATE TABLE members (
 id INTEGER PRIMARY KEY AUTOINCREMENT, 
 name TEXT NOT NULL, 
@@ -18,7 +17,7 @@ age INTEGER,
 dob TEXT, 
 email TEXT, 
 pnumber TEXT);
-'''
+```
 ## REST Endpoints
 |      Name     | HTTP Method |       Path        |
 | ------------- | ----------- | ----------------- |
