@@ -19,7 +19,9 @@ def get_members():
 @app.route("/members/<int:id>", methods=["DELETE"])
 def delete_member(id):
     db = DB('members.db')
-    db.deleteRecord(id)
+    delete = db.deleteRecord(id)
+    if not delete:
+        return "Member could not be deleted, member not found", 404, {"Access-Control-Allow-Origin":"*"}
     return "Deleted", 200, {"Access-Control-Allow-Origin":"*"}
 
 @app.route("/members/<int:id>", methods=["PUT"])
@@ -30,7 +32,9 @@ def edit_member(id):
          "dob": request.form["dob"],
          "email": request.form["email"],
          "pnumber": request.form["pnumber"]}
-    db.editRecord(id, d)
+    edit = db.editRecord(id, d)
+    if not edit:
+        return "Edit failed, member not found", 404, {"Access-Control-Allow-Origin":"*"}
     return "edited", 200, {"Access-Control-Allow-Origin":"*"}
 
 @app.route("/members", methods=["POST"])
